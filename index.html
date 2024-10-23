@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Especial</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="question">
+        <h1>Quer namorar comigo?</h1>
+        <div id="buttons-container">
+            <button id="yes-button">Sim</button>
+            <button id="no-button">Não</button>
+        </div>
+    </div>
+
+    <div id="larinha" style="display: none;">
+        <main class="conteudo">
+            <section class="conteudo__textinho">
+                <h1 class="conteudo__textinho__titulo">Cabeçuda</h1>
+                <p class="conteudo__textinho__titulo__texto">
+                    Lara, você é tão cabeçuda que, quando usa boné, é um evento meteorológico. Mas é tão, mas tão cabeçuda que, quando você vai ao médico, ele não pede uma tomografia, ele pede uma pesquisa de campo. Você não tem pescoço, só tem um suporte pra cabeça.
+                    Sua cabeça de Jabulani, cabeça de sino de Belém <span class="blen">blen blen</span>, logo da Universal e bola de cristal… não consigo pensar em mais nenhuma piada sobre sua cabeça, saruezinho. Eu te amo, Lara 🎈
+                </p>
+            </section>
+            <figure class="conteudo__imagem">
+                <img id="nos" src="https://raw.githubusercontent.com/LuanCHR/for-larinha/main/nos.jpg" alt="eu e a cabecuda">
+
+            </figure>
+        </main>
+    </div>
+
+    <script>
+        const noButton = document.getElementById('no-button');
+        const yesButton = document.getElementById('yes-button');
+        const questionDiv = document.getElementById('question');
+        const larinhaDiv = document.getElementById('larinha');
+
+        noButton.addEventListener('mouseover', () => {
+            const randomX = Math.floor(Math.random() * (window.innerWidth - 100)); // 100 é a largura do botão
+            const randomY = Math.floor(Math.random() * (window.innerHeight - 50)); // 50 é a altura do botão
+            noButton.style.left = randomX + 'px';
+            noButton.style.top = randomY + 'px';
+            noButton.classList.add('moving');
+        });
+
+        yesButton.addEventListener('click', () => {
+            questionDiv.style.display = 'none';
+            larinhaDiv.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
